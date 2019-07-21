@@ -16,7 +16,7 @@
            <v-card-tilte primary-title>
             <div>
             <h3 class="white--text mb-0 ml-1" >{{ meetup.title}}</h3>
-            <div class="ml-1">{{meetup.date}}</div> 
+            <div class="ml-1">{{meetup.date | date}}</div> 
             </div>
             </v-card-tilte> 
             <v-card-actions>

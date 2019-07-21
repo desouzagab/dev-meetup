@@ -3,10 +3,10 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import MeetUps from './views/MeetUps.vue'
 import Profile from './views/Profile.vue'
-import CreateMeetUp from './components/MeetUp/CreateMeetUp.vue'
-import SignIn from './components/User/SignIn.vue'
-import SignUp from './components/User/SignUp.vue'
-import Meetup from './components/MeetUp/Meetup.vue'
+import CreateMeetUp from './views/CreateMeetUp.vue'
+import SignIn from './views/SignIn.vue'
+import SignUp from './views/SignUp.vue'
+import Meetup from './views/Meetup.vue'
 
 Vue.use(Router)
 

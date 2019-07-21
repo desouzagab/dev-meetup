@@ -34,13 +34,9 @@
   
 
   export default {
-    data(){
-      return{
-        meetups: [
-          { imageUrl: 'https://media.timeout.com/images/104687769/750/422/image.jpg', id: 'sdafea', title: 'Meet up in nyc'},
-          { imageUrl: 'https://media.timeout.com/images/104687769/750/422/image.jpg', id: 'fsafaf', title: 'Meet up in lol'}
-
-        ]
+     computed: {
+      meetups () {
+        return this.$store.getters.featuredMeetups
       }
     },
     methods: {
@@ -53,13 +49,12 @@
 
 <style scoped>
 .title {
-  align-items: center;
-  position: absolute; 
-  bottom: 50px;
-  background-color: rgba(0,0,0,0.5);
-  color: whitesmoke;
-  font-size: 2em;
-  padding: 20px;
+    position: absolute;
+    bottom: 50px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 2em;
+    padding: 20px;
 }
 </style>
 

@@ -9,14 +9,20 @@ export default new Vuex.Store({
                 imageUrl: 'https://media.timeout.com/images/104687769/750/422/image.jpg',
                 id: 'sdafea',
                 title: 'Meet up in nyc',
-                date: '2019-04-12'
+                date: '2019-04-12',
+                location: 'New York',
+                description: ' NYC heyyyyy'
+
+
             },
 
             {
                 imageUrl: 'https://i0.wp.com/urbanmatter.com/chicago/wp-content/uploads/2017/10/shutterstock_530918146.jpg?w=1000&ssl=1',
                 id: 'fsafaf',
                 title: 'Meet up in chicago',
-                date: '2019-04-24'
+                date: '2019-04-24',
+                location: 'Chicago',
+                description: 'Chicago cago cago'
             }
 
         ],
@@ -29,10 +35,23 @@ export default new Vuex.Store({
 
     },
     mutations: {
-
+        createMeetup(state, payload) {
+            state.loadedMeetups.push(payload)
+        }
     },
     actions: {
-
+        createMeetup({ commit }, payload) {
+            const meetup = {
+                    title: payload.title,
+                    location: payload.location,
+                    imageUrl: payload.imageUrl,
+                    description: payload.description,
+                    date: payload.date,
+                    id: 'lololollllo'
+                }
+                // -> firebase/store
+            commit('createMeetup', meetup)
+        }
     },
     getters: {
         loadedMeetups(state) {

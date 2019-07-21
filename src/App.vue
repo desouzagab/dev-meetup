@@ -37,25 +37,33 @@
 </template>
 
 <script>
-// import { link } from 'fs';
-
-export default {
-  name: 'App',
-  data () {
-    return {
-      sideNav: false,
-      menuItems: [
-        { icon: 'supervised_user_circle', title: 'View Meetups' , link: '/meetups'},
-        { icon: 'room', title: 'Organize Meetups' , link: '/meetups/new'},
-        { icon: 'person', title: 'Profile' , link: '/profile'},
-        { icon: 'face', title: 'Sign up' , link: '/signup'},
-        { icon: 'lock_open', title: 'Sign in' , link: '/signin'},
+  export default {
+    data () {
+      return {
+        sideNav: false
+      }
+    },
+    computed: {
+      menuItems () {
+        let menuItems = [
+          {icon: 'face', title: 'Sign up', link: '/signup'},
+          {icon: 'lock_open', title: 'Sign in', link: '/signin'}
         ]
-      //
+        if (this.userIsAuthenticated) {
+          menuItems = [
+            {icon: 'supervisor_account', title: 'View Meetups', link: '/meetups'},
+            {icon: 'room', title: 'Organize Meetup', link: '/meetup/new'},
+            {icon: 'person', title: 'Profile', link: '/profile'}
+          ]
+        }
+        return menuItems
+      },
+      userIsAuthenticated () {
+        return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+      }
     }
   }
-}
-</script> 
+</script>
 
 
 

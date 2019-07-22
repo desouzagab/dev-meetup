@@ -6,10 +6,12 @@ import store from './store'
 import './registerServiceWorker'
 import DateFilter from './components/datefilter'
 import * as firebase from 'firebase'
+import Alert from './components/Alert'
 
 Vue.config.productionTip = false
 
 Vue.filter('date', DateFilter)
+Vue.component('alert', Alert)
 
 const config = {
     apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
